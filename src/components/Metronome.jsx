@@ -6,7 +6,13 @@ class Metronome extends Component {
   bpm: 120
   }
 
-  beep = () => this.state.sound.play()
+  bpmAsMilliseconds = () => 60000/this.state.bpm;
+
+  beep = () => this.state.sound.play();
+
+  startMetronome = () => {
+    setInterval(this.beep, this.bpmAsMilliseconds());
+  };
 
   render() { 
     
@@ -21,7 +27,7 @@ class Metronome extends Component {
                value={this.state.bpm}
                onChange={(e) => this.setState({ bpm: e.target.value })} />
         
-        <button onClick={this.beep} />
+        <button onClick={this.startMetronome} />
       </>
     );
   }
