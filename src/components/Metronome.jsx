@@ -13,8 +13,8 @@ class Metronome extends Component {
 
   startMetronome = () => {
     this.setState({ playing: true })
-    setInterval(() => {
-      this.state.playing ? this.beep() : clearInterval()
+    const metronomeTimer = setInterval(() => {
+      this.state.playing ? this.beep() : clearInterval(metronomeTimer)
     }, this.bpmAsMilliseconds());
   };
 
