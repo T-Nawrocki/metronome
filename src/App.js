@@ -5,8 +5,8 @@ import MetronomeContainer from "./containers/MetronomeContainer"
 function App() {
   return (
     <div className="App">
-      <h1>Metronome!</h1>
-      <MetronomeContainer />
+      <h1 className="metronome-header">Metronome!</h1>
+      <MetronomeContainer className="metronome-container"/>
     </div>
   );
 }
